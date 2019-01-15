@@ -53,6 +53,8 @@ class BookController implements ContainerInjectableInterface
         $page = $this->di->get("page");
         $book = new Book();
         $book->setDb($this->di->get("dbqb"));
+        $book->find("id", 3);
+        var_dump($book);
 
         $page->add("book/crud/view-all", [
             "items" => $book->findAll(),

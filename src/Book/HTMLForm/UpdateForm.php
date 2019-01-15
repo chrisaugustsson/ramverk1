@@ -76,6 +76,8 @@ class UpdateForm extends FormModel
         $book = new Book();
         $book->setDb($this->di->get("dbqb"));
         $book->find("id", $id);
+
+        var_dump($book);
         return $book;
     }
 
